@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microfinance | MDFI Finance Private Limited</title>
+    <meta name="description"
+        content="Empowering women through our exclusive Microfinance solutions. Minimum group size of 4, with loans starting at ₹40,000 per person.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-hero {
+            /* Lighter gradient at top to show faces, darker at bottom for text */
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.85)), url('assets/microfinance_hero_desktop.png') no-repeat top center/cover;
+            padding: 220px 0 120px;
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .page-hero {
+                /* Use the happy/narrower image for mobile */
+                background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.85)), url('assets/microfinance_hero_happy.png');
+
+                /* Push background down slightly on mobile so navbar doesn't cover faces */
+                /* 'center 120px' means horizontal center, vertical 120px from top */
+                background-position: center 80px;
+                /* Adjust padding to ensure text doesn't overlap faces too much */
+                padding: 180px 0 80px;
+                /* Ensure background allows for offset without repeating/tiling issues if possible */
+                /* Since it's 'cover', it might be tricky. Let's try to 'contain' the faces? */
+                /* Actually, 'cover' with offset might show white bar if image runs out. */
+                /* Using 'center 20%' is safer than pixels usually */
+                background-position: center 25%;
+            }
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .requirements-box {
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+            margin-bottom: 40px;
+        }
+
+        .req-list {
+            margin-top: 20px;
+        }
+
+        .req-list li {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            /* Fixed width for title column */
+            align-items: start;
+            gap: 10px;
+            line-height: 1.5;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border);
+            /* Optional: visual separator */
+        }
+
+        .req-list li:last-child {
+            border-bottom: none;
+        }
+
+        .req-title-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .req-title-group span {
+            color: var(--accent);
+            font-size: 1.8rem;
+            min-width: 40px;
+        }
+
+        .req-desc {
+            color: var(--text-muted);
+            padding-top: 5px;
+            /* Align with text baseline */
+        }
+
+        @media (max-width: 768px) {
+            .req-list li {
+                grid-template-columns: 1fr;
+                /* Stack on mobile */
+                gap: 5px;
+            }
+
+            .req-desc {
+                padding-left: 55px;
+                /* Indent description to align with title text */
+            }
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit-card {
+            background: var(--secondary);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .cta-section {
+            background: var(--accent);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .btn-light {
+            background: #fff;
+            color: var(--accent);
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .crumb {
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .crumb a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .requirements-container {
+            display: block;
+            max-width: 900px;
+            margin: 0 auto 50px;
+        }
+
+        .requirements-box {
+            margin-bottom: 0;
+            height: auto;
+        }
+
+        .req-image-box {
+            height: 100%;
+        }
+
+        .content-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .poster-container {
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .poster-img {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .requirements-container {
+                grid-template-columns: 1fr;
+            }
+
+            .req-image-box {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="logo.jpg" alt="MDFI Finance Logo" class="logo-img">
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#branches">Our Branches</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="index.html#contact" class="btn-primary">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-hero">
+        <div class="container">
+            <div class="crumb">
+                <a href="index.html">Home</a> / Microfinance
+            </div>
+            <h1>Microfinance Solutions</h1>
+            <p>Empowering women entrepreneurs to build a better future with accessible financial support.</p>
+        </div>
+    </header>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="requirements-container">
+                <div class="requirements-box">
+                    <span class="section-tag">Key Requirements</span>
+                    <h2>Who Can Apply?</h2>
+                    <p>Our microfinance program is designed specifically to support self-help groups and women
+                        entrepreneurs.</p>
+
+                    <ul class="req-list">
+                        <li>
+                            <div class="req-title-group">
+                                <span>👩</span> Exclusively for Women
+                            </div>
+                            <div class="req-desc">
+                                Empowering female financial independence.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="req-title-group">
+                                <span>👥</span> Min Group Size: 4
+                            </div>
+                            <div class="req-desc">
+                                Form a group to guarantee mutual growth.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="req-title-group">
+                                <span>💰</span> Min Loan: ₹40,000
+                            </div>
+                            <div class="req-desc">
+                                Per person substantial support to kickstart your goals.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="poster-container">
+                <img src="assets/microfinance_poster_clean.png" alt="Microfinance Loan Details" class="poster-img">
+            </div>
+
+            <div class="text-center">
+                <span class="section-tag">Why Choose Us</span>
+                <h2>Benefits of Our Microfinance</h2>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Low Interest Rates</h3>
+                    <p>We offer competitive rates to ensure your repayment is manageable and stress-free.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Easy Documentation</h3>
+                    <p>Minimal paperwork required. We value your time and trust over varied documents.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Quick Disbursement</h3>
+                    <p>Once approved, the funds are transferred quickly so you can start immediately.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Financial Literacy</h3>
+                    <p>We also provide guidance on how to manage your funds and grow your business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Journey?</h2>
+            <p style="margin-bottom: 30px; opacity: 0.9;">Contact us today to apply or visit our nearest branch.</p>
+            <a href="index.html#contact" class="btn-light">Apply Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 MDFI Finance Private Limited. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="terms-and-conditions.html">Terms & Conditions</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="sticky-contact-bar">
+        <a href="https://wa.me/918848623626" target="_blank" class="sticky-btn whatsapp-btn"
+            aria-label="Chat on WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487 2.982 1.288 2.982.858 3.526.802.544-.056 1.733-.708 1.98-1.392.248-.684.248-1.27.174-1.394z" />
+            </svg>
+        </a>
+        <a href="tel:+918848623626" class="sticky-btn call-btn" aria-label="Call Us">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.49-5.48-4.14-6.97-6.97l1.97-1.57c.23-.23.33-.55.24-1.01a17.3 17.3 0 0 1-.56-3.53c-.06-.52-.5-1.01-1.03-1.01H4.05a1.01 1.01 0 0 0-1.02 1.13c1.07 8.1 7.4 14.43 15.5 15.5.99.13 1.9-.66 1.9-1.7v-3.48c0-.53-.49-.97-1.02-.91z" />
+            </svg>
+        </a>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
